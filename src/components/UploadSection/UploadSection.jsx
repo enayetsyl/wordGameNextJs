@@ -1,3 +1,4 @@
+'use client'
 import { globalContext } from '@/lib/GlobalContext/GlobalContext';
 import convertor from '@/lib/convertor';
 import React, { useContext, useRef } from 'react'
@@ -44,7 +45,7 @@ const UploadSection = () => {
       />
       <div 
       onClick={openBrowseImage}
-      className="h-96 border-2 border-purple-700 text-white">Click Here to upload file</div>
+      className="h-60 border-2 border-purple-700 text-orange-500 flex justify-center items-center">Click Here to upload file</div>
     </div>
   )
 }

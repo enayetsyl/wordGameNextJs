@@ -43,14 +43,17 @@ const RearrangedWords = () => {
     doc.save('word_combinations.pdf');
   };
 
-
+ // Render the component only if words state holds any value
+ if (!wordCombinations || wordCombinations.length === 0) {
+  return null;
+}
 
   return (
     <div>
-      <h1 className='text-orange-900 text-5xl'>RearrangedWords</h1>
+      <h1 className="text-orange-700 font-bold text-2x">RearrangedWords</h1>
       {shuffledWords.map((word, i) => (
         <span key={i} className='text-orange-500'>
-          {word}- ,
+          {word},
           {/* <span style={{ paddingLeft: getPadding(word) }}>&nbsp;</span> */}
         </span>
       ))}

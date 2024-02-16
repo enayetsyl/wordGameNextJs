@@ -1,17 +1,9 @@
-"use client";
-
-import TextCard from "@/components/Cards/TextCard";
 import RearrangedWords from "@/components/RearrangedWords/RearrangedWords";
 import ShowText from "@/components/ShowText/ShowText";
 import ShowWords from "@/components/ShowWords/ShowWords";
 import UploadSection from "@/components/UploadSection/UploadSection";
-import convertor from "@/lib/convertor";
-import React, { useRef, useState } from "react";
-import { BsImageFill } from "react-icons/bs";
 
 const Home = () => {
-  const [processing, setProcessing] = useState(false);
-  const [texts, setTexts] = useState([]);
  
 
   

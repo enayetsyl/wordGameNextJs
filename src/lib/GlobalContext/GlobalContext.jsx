@@ -16,10 +16,27 @@ export const ContextProvider = ({ children }) => {
   const excludedWords = ["the", "and", "are", "its", "may", "can"];
 
   useEffect(() => {
+    // todo 
+    // const splitParagraphIntoWords = () => {
+    //   const wordsArray = text.split(/\s+|[-&_.,;:!?()[\]{}|/]/)
+    //                          .filter(word => word.length >= 3 && !excludedWords.includes(word.toLowerCase()));
+    //   return wordsArray;
+    // };
+
+    // todo logic implemented for not repeating same word
     const splitParagraphIntoWords = () => {
-      const wordsArray = text.split(/\s+|[-&_.,;:!?()[\]{}|/]/)
-                             .filter(word => word.length >= 3 && !excludedWords.includes(word.toLowerCase()));
-      return wordsArray;
+      // Split the text into words using regular expression and filter out excluded words
+      const wordsArray = text
+        .split(/\s+|[-&_.,;:!?()[\]{}|/]/)
+        .filter(word => word.length >= 3 && !excludedWords.includes(word.toLowerCase()));
+  
+      // Use a Set to keep track of unique words
+      const uniqueWordsSet = new Set(wordsArray);
+  
+      // Convert the Set back to an array
+      const uniqueWordsArray = Array.from(uniqueWordsSet);
+  
+      return uniqueWordsArray;
     };
     setWords(splitParagraphIntoWords());
   }, [text]);

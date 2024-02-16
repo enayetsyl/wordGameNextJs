@@ -1,3 +1,4 @@
+'use client'
 import { globalContext } from "@/lib/GlobalContext/GlobalContext"
 import { useContext } from "react"
 
@@ -10,9 +11,14 @@ const ShowWords = () => {
     setSelectedWords([...selectedWords, word]);
   };
 
+ // Render the component only if words state holds any value
+ if (!words || words.length === 0) {
+  return null;
+}
+
   return (
     <div>
-      <h1 className="text-orange-900 text-5xl my-10">Word List</h1>
+      <h1 className="text-orange-700 font-bold text-2xl">Word List</h1>
       {words.map((word, i) => (<p 
       className="text-orange-500 cursor-pointer"
       key={i}
