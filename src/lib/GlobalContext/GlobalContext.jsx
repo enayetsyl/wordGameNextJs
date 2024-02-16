@@ -11,7 +11,7 @@ export const ContextProvider = ({ children }) => {
   const [wordCombinations, setWordCombinations] = useState([]);
   const [combinationsCount, setCombinationsCount] = useState(2);
   const maxPermutations = 2000;
-
+  const [selectedTextColor, setSelectedTextColor] = useState('black'); 
   // Function to split the paragraph into words and update the words state
   const excludedWords = ["the", "and", "are", "its", "may", "can"];
 
@@ -96,7 +96,9 @@ export const ContextProvider = ({ children }) => {
     wordCombinations,
     setWordCombinations,
     combinationsCount,
-    setCombinationsCount
+    setCombinationsCount,
+    selectedTextColor, 
+    setSelectedTextColor,
   };
 
   return (
